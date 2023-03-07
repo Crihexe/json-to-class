@@ -8,6 +8,8 @@ import org.json.JSONObject;
 
 public class Main {
 	
+	private static final boolean DEBUG = false;
+	
 	public Main(String mainClassName, File jsonFile) {
 		StringBuilder json = new StringBuilder();
 		
@@ -33,6 +35,11 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
+		if(DEBUG) {
+			new Main("Main", new File("C:\\Users\\cristian.dinicol.ext\\Desktop\\builds\\json.json"));
+			return;
+		}
+		
 		if(args.length < 2) {
 			System.out.println("Invalid params!\nUsage: mainClassName jsonFilePath");
 			return;
